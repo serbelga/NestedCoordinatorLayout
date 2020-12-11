@@ -6,12 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".CoordinatorActivity">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-    </androidx.core.widget.NestedScrollView>
     <com.sergiobelda.multiplescrollflags.NestedCoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -48,7 +42,6 @@
             android:layout_height="200dp"
             android:minHeight="56dp"
             android:background="@color/teal_200"
-            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"></com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

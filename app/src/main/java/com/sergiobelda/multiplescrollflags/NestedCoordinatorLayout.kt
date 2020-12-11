@@ -52,7 +52,12 @@ class NestedCoordinatorLayout @JvmOverloads constructor(
         stopNestedScroll()
     }
 
-    override fun onStartNestedScroll(child: View, target: View, nestedScrollAxes: Int, type: Int): Boolean {
+    override fun onStartNestedScroll(
+        child: View,
+        target: View,
+        nestedScrollAxes: Int,
+        type: Int
+    ): Boolean {
         // Enable the scrolling behavior of our own children
         val tHandled = super.onStartNestedScroll(child, target, nestedScrollAxes, type)
         // Enable the scrolling behavior of the parent's other children
