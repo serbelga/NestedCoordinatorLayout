@@ -16,32 +16,38 @@
             android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.Toolbar
-                app:layout_scrollFlags="scroll|snap|enterAlways"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|snap|enterAlways" />
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
-            android:nestedScrollingEnabled="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:nestedScrollingEnabled="true"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
     </com.sergiobelda.multiplescrollflags.NestedCoordinatorLayout>
 
     <com.google.android.material.appbar.AppBarLayout
-        app:elevation="0dp"
         android:id="@+id/appbarLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:minHeight="20dp"
+        app:elevation="0dp">
 
-        <androidx.appcompat.widget.Toolbar
+        <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
-            android:nestedScrollingEnabled="true"
             android:layout_height="200dp"
             android:minHeight="56dp"
-            android:background="@color/teal_200"
-            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed" />
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:background="@color/teal_700">
+
+            <Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/teal_200"
+                app:layout_collapseMode="pin" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

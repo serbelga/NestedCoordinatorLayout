@@ -5,27 +5,25 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.annotation.Nullable
 import androidx.coordinatorlayout.widget.CoordinatorLayout
-import androidx.core.view.NestedScrollingChild2
+import androidx.core.view.NestedScrollingChild3
 import androidx.core.view.NestedScrollingChildHelper
 import androidx.core.view.ViewCompat
 
-class NestedCoordinatorLayout : CoordinatorLayout, NestedScrollingChild2 {
+class NestedCoordinatorLayout : CoordinatorLayout, NestedScrollingChild3 {
     private var mChildHelper: NestedScrollingChildHelper
 
-    constructor(context: Context?) : super(context!!) {
+    constructor(context: Context) : super(context) {
         mChildHelper = NestedScrollingChildHelper(this)
         isNestedScrollingEnabled = true
     }
 
-    constructor(context: Context?, attrs: AttributeSet?) : super(
-        context!!, attrs
-    ) {
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
         mChildHelper = NestedScrollingChildHelper(this)
         isNestedScrollingEnabled = true
     }
 
-    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(
-        context!!, attrs, defStyleAttr
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(
+        context, attrs, defStyleAttr
     ) {
         mChildHelper = NestedScrollingChildHelper(this)
         isNestedScrollingEnabled = true
@@ -41,6 +39,18 @@ class NestedCoordinatorLayout : CoordinatorLayout, NestedScrollingChild2 {
 
     override fun hasNestedScrollingParent(): Boolean {
         return mChildHelper.hasNestedScrollingParent()
+    }
+
+    override fun dispatchNestedScroll(
+        dxConsumed: Int,
+        dyConsumed: Int,
+        dxUnconsumed: Int,
+        dyUnconsumed: Int,
+        offsetInWindow: IntArray?,
+        type: Int,
+        consumed: IntArray
+    ) {
+        mChildHelper.dispatchNestedScroll(dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed,offsetInWindow, type, consumed)
     }
 
     override fun hasNestedScrollingParent(type: Int): Boolean {
