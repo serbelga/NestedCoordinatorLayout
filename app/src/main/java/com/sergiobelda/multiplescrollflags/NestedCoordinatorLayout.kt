@@ -142,7 +142,7 @@ class NestedCoordinatorLayout @JvmOverloads constructor(
         dyConsumed: Int,
         dxUnconsumed: Int,
         dyUnconsumed: Int,
-        @Nullable offsetInWindow: IntArray?,
+        offsetInWindow: IntArray?,
         type: Int
     ): Boolean =
         childHelper.dispatchNestedScroll(
@@ -159,7 +159,7 @@ class NestedCoordinatorLayout @JvmOverloads constructor(
         dyConsumed: Int,
         dxUnconsumed: Int,
         dyUnconsumed: Int,
-        @Nullable offsetInWindow: IntArray?
+        offsetInWindow: IntArray?
     ): Boolean =
         childHelper.dispatchNestedScroll(
             dxConsumed,
@@ -172,8 +172,8 @@ class NestedCoordinatorLayout @JvmOverloads constructor(
     override fun dispatchNestedPreScroll(
         dx: Int,
         dy: Int,
-        @Nullable consumed: IntArray?,
-        @Nullable offsetInWindow: IntArray?
+        consumed: IntArray?,
+        offsetInWindow: IntArray?
     ): Boolean =
         childHelper.dispatchNestedPreScroll(
             dx,
@@ -186,8 +186,8 @@ class NestedCoordinatorLayout @JvmOverloads constructor(
     override fun dispatchNestedPreScroll(
         dx: Int,
         dy: Int,
-        @Nullable consumed: IntArray?,
-        @Nullable offsetInWindow: IntArray?,
+        consumed: IntArray?,
+        offsetInWindow: IntArray?,
         type: Int
     ): Boolean =
         childHelper.dispatchNestedPreScroll(dx, dy, consumed, offsetInWindow, type)
